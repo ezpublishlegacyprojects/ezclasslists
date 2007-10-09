@@ -28,6 +28,7 @@ include_once( 'kernel/common/template.php' );
 $http =& eZHTTPTool::instance();
 $Module =& $Params["Module"];
 
+include_once( 'lib/ezutils/classes/ezfunctionhandler.php' );
 
 $classIdentifier = $Params['classIdentifier'];
 
@@ -38,6 +39,10 @@ if( !is_numeric( $offset ) )
 $tpl =& templateInit();
 if ( $Module->isCurrentAction('Remove') )
 {
+	if ( $http->hasPostVariable( 'MoveToTrash' ) && $http->postVariable( 'MoveToTrash' ) == '1' )
+		$moveToTrash = true;
+	else
+		$moveToTrash = false;
 	$nodeIDList = $Module->actionParameter( 'DeleteIDArray' );
 	if ( is_array($nodeIDList) )
 	{
@@ -49,7 +54,7 @@ if ( $Module->isCurrentAction('Remove') )
 				continue ;
 			if ( $node->canRemove() )
 			{
-				$node->remove();
+				$node->removeNodeFromTree( $moveToTrash );
 				$remove_count++;
 			}
 		}

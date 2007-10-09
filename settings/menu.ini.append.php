@@ -11,7 +11,7 @@ NavigationPartIdentifier=classlists
 Name=Lists by content class
 Tooltip=List object by content class
 URL[]
-URL[default]=classlists/list
+URL[default]=classlists/list/trackback
 Enabled[]
 Enabled[default]=true
 Enabled[browse]=false

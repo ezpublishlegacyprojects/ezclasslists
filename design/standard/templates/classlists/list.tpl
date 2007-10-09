@@ -1,23 +1,25 @@
 {def
 	$item_type=ezpreference( 'admin_classlists_limit' )
 	$limit=min( $item_type, 3)|choose( 10, 10, 25, 50 )
-	$filter_hash=hash(parent_node_id, 2,
+	$filter_hash=hash(parent_node_id, 1,
 						main_node_only, true(),
 						sort_by, array('modified', false()),
 						limit, $limit,
 						offset, $view_parameters.offset)
-	 $filter_count_hash=hash(parent_node_id, 2,
+	 $filter_count_hash=hash(parent_node_id, 1,
 							main_node_only, true())
 	 $nodes_count=0
 	 $nodes_list = array()
+	 $confirm_js=ezini( 'Delete', 'ConfirmJavascript', 'lists.ini' )
+	 $move_to_trash=ezini( 'Delete', 'DefaultMoveToTrash', 'lists.ini' )
 }
 
 {if $class_identifier}
-	{set $filter_count_hash=hash(parent_node_id, 2,
+	{set $filter_count_hash=hash(parent_node_id, 1,
 								main_node_only, true(),
 								class_filter_type, include,
 								class_filter_array, array( $class_identifier ))}
-	{set $filter_hash=hash(parent_node_id, 2,
+	{set $filter_hash=hash(parent_node_id, 1,
 						sort_by, array('modified', false()),
 						class_filter_type, include,
 						class_filter_array, array( $class_identifier ),
@@ -28,18 +30,18 @@
 
 {set $nodes_count=fetch(content, tree_count, $filter_count_hash)}
 {set $nodes_list=fetch(content, tree, $filter_hash)}
-{if $remove_count|is_set()}
+{if is_set( $remove_count )}
 	<div class="message-feedback">
 		<h2>{'%remove_count objects deleted'|i18n('classlists/list', , hash('%remove_count', $remove_count))}</h2>
 	</div>
 {/if}
-{if $error|is_set()}
+{if is_set( $error )}
 	<div class="message-warning">
 		<h2>{$error|wash()}</h2>
 	</div>
 {/if}
 <div class="context-block">
-<form name="classlists" action={$page_uri|ezurl()} method="post">
+<form name="classlists" action={$page_uri|ezurl()} method="post"{if $confirm_js|eq('enabled')} onsubmit="return confirm('{'Are you sure you want to delete these objects ?'|i18n('classlists/list')|wash( 'javascript' )}');"{/if}>
 
 
 <div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
@@ -109,7 +111,7 @@
 	{$node.object.modified|l10n(datetime)}
 </td>
 <td class="edit">
-	<a href="/content/edit/{$node.object.id}"><img src={'edit.gif'|ezimage()} alt="Modifier" /></a>
+	<a href={concat('/content/edit/', $node.object.id)|ezurl()}><img src={'edit.gif'|ezimage()} alt="{'Modify'|i18n( 'classlists/list')}" /></a>
 </td>
 </tr>
 {/foreach}
@@ -131,6 +133,10 @@
 	<div class="box-bc"><div class="box-ml"><div class="box-mr"><div class="box-tc"><div class="box-bl"><div class="box-br">
 	<div class="block">
 		<div class="left">
+			<p>
+			<label for="MoveToTrash">{'Move to trash'|i18n( 'classlists/list' )}</label>
+			<input type="checkbox" value="1" name="MoveToTrash" id="MoveToTrash"{if $move_to_trash|eq( 'enabled' )} checked="checked"{/if} />
+			</p>
 			<input class="button" type="submit" name="RemoveButton" value="{'Remove selected'|i18n( 'design/admin/node/view/full' )}" title="{'Remove the selected items from the list above.'|i18n( 'design/admin/node/view/full' )}" />
 		</div>
 		<div class="right">
@@ -144,4 +150,4 @@
 </form>
 </div>
 
-{undef $filter_hash $filter_count_hash $nodes_count $nodes_list}
+{undef $filter_hash $filter_count_hash $nodes_count $nodes_list $confirm_js $move_to_trash}

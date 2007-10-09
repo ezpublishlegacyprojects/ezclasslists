@@ -9,6 +9,11 @@
 <context>
     <name>classlists/list</name>
     <message>
+        <source>Are you sure you want to delete these objects ?</source>
+        <translation>Êtes vous sûr de vouloir supprimer ces objets ?</translation>
+    </message>
+    <name>classlists/list</name>
+    <message>
         <source>Lists by content class</source>
         <translation>Listes par classe de contenu</translation>
     </message>
@@ -31,6 +36,10 @@
 	<message>
 		<source>Classes list</source>
 		<translation>Liste des classes</translation>
+	</message>
+	<message>
+		<source>Modify</source>
+		<translation>Modifier</translation>
 	</message>
 </context>
 </TS>
