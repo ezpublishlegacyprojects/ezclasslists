@@ -2,7 +2,7 @@
 <context>
 	<name>kernel/navigationpart</name>
 	<message>
-		<source>Lists by content class</source>
+		<source>Lists by class</source>
 		<translation>Listes par classe</translation>
 	</message>
 </context>

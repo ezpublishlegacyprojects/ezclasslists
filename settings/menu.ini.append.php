@@ -8,10 +8,10 @@ Tabs[]=classlists
 
 [Topmenu_classlists]
 NavigationPartIdentifier=classlists
-Name=Lists by content class
+Name=Lists by class
 Tooltip=List object by content class
 URL[]
-URL[default]=classlists/list/trackback
+URL[default]=classlists/list/folder
 Enabled[]
 Enabled[default]=true
 Enabled[browse]=false
