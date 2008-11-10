@@ -1,8 +1,6 @@
-<?php
-/*
+<?php /*
 
 [RegionalSettings]
 TranslationExtensions[]=ezclasslists
 
-*/
-?>
+*/ ?>

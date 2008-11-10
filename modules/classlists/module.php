@@ -2,9 +2,9 @@
 // Created on: <14-Jui-2007 15:00 damien pobel>
 //
 // SOFTWARE NAME: eZ Class Lists
-// SOFTWARE RELEASE: 0.1
-// BUILD VERSION: 1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2007 Damien POBEL
+// SOFTWARE RELEASE: 0.3
+// BUILD VERSION: 3
+// COPYRIGHT NOTICE: Copyright (C) 1999-2008 Damien POBEL
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -25,16 +25,14 @@
 $Module = array( 'name' => 'Lists by content class' );
 
 $ViewList = array();
-$ViewList['list'] = array(
-    'script' => 'list.php',
-    'functions' => array( 'read' ),
-	'default_navigation_part' => 'classlists',
-	'ui_context' => 'view',
-    'params' => array ( 'classIdentifier' ),
-	'unordered_params' => array('offset' => 'Offset'),
-    'single_post_actions' => array( 'RemoveButton' => 'Remove' ),
-	'post_action_parameters' => array( 'Remove' => array( 'DeleteIDArray' => 'DeleteIDArray' ) )
-	);
+$ViewList['list'] = array( 'script' => 'list.php',
+                           'functions' => array( 'read' ),
+                           'default_navigation_part' => 'classlists',
+                           'ui_context' => 'view',
+                           'params' => array ( 'classIdentifier', 'sortMethod', 'sortOrder', 'ajax' ),
+                           'unordered_params' => array('offset' => 'Offset'),
+                           'single_post_actions' => array( 'RemoveButton' => 'Remove' ),
+                           'post_action_parameters' => array( 'Remove' => array( 'DeleteIDArray' => 'DeleteIDArray' ) ) );
 
 
 $FunctionList['read'] = array();
