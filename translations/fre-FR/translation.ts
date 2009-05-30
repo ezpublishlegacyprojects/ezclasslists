@@ -7,6 +7,13 @@
     </message>
 </context>
 <context>
+    <name>design/admin/popupmenu</name>
+    <message>
+        <source>View objects of this class</source>
+        <translation>Voir les objets de cette classe</translation>
+    </message>
+</context>
+<context>
     <name>classlists/list</name>
     <message>
         <source>Are you sure you want to delete these objects ?</source>

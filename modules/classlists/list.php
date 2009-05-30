@@ -37,6 +37,10 @@ if ( $http->hasPostVariable( 'classIdentifier' ) )
     $classIdentifier = $http->postVariable( 'classIdentifier' );
     $hasPost = true;
 }
+if ( is_numeric( $classIdentifier ) )
+{
+    $classIdentifier = eZContentClass::classIdentifierByID( $classIdentifier );
+}
 
 $sortMethod = $listIni->variable( 'ListSettings', 'DefaultSortMethod' );
 if ( isset( $Params['sortMethod'] ) )
