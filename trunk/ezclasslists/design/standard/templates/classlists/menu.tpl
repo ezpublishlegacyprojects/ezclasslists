@@ -1,3 +1,7 @@
+{*
+ * $Id$
+ * $HeadURL$
+ *}
 <div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
 <h4>{'Options'|i18n( 'classlists/list' )}</h4>
 </div></div></div></div></div></div>

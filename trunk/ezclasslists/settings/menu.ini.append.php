@@ -1,4 +1,8 @@
 <?php /*
+#
+# $Id$
+# $HeadURL$
+#
 
 [NavigationPart]
 Part[classlists]=Lists by class

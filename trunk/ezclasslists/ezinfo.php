@@ -1,4 +1,8 @@
 <?php
+//
+// $Id$
+// $HeadURL$
+//
 // Created on: <30-May-2009 16:57 damien pobel>
 //
 // SOFTWARE NAME: eZ Class Lists

@@ -1,3 +1,7 @@
+{*
+ * $Id$
+ * $HeadURL$
+ *}
 {def
     $item_type = ezpreference( 'admin_classlists_limit' )
     $limit = min( $item_type, 3 )|choose( 10, 10, 25, 50 )

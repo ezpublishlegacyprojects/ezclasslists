@@ -1,3 +1,7 @@
+{*
+ * $Id$
+ * $HeadURL$
+ *}
 {include uri='design:class/window_controls.tpl'}
 
 {section show=$validation.processed}

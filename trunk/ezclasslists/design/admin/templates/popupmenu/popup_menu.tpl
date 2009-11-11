@@ -1,3 +1,7 @@
+{*
+ * $Id$
+ * $HeadURL$
+ *}
 {def $multilingual_site=fetch( content, translation_list )|count|gt( 1 )}
 
 <script language="JavaScript1.2" type="text/javascript">

@@ -1,4 +1,5 @@
-
+// $Id$
+// $HeadURL$
 var CLASSLISTS_MAIN_CONTENT_ID = 'maincontent-design';
 
 function classListsFilter( baseURL, imgLoader )

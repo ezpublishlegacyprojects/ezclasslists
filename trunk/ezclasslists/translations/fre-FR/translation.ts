@@ -1,4 +1,8 @@
 <!DOCTYPE TS><TS>
+<!--
+     $Id$
+     $HeadURL$
+-->
 <context>
     <name>kernel/navigationpart</name>
     <message>
