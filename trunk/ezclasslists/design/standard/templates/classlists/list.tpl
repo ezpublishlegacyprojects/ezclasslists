@@ -49,16 +49,15 @@
 
 
 <div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
-<h2 class="context-title">{'%count objects'|i18n( 'classlists/list', , hash( '%count', $nodes_count ) )}</h2>
+<h1 class="context-title">{'%count objects'|i18n( 'classlists/list', , hash( '%count', $nodes_count ) )}</h1>
 <div class="header-subline"></div>
 </div></div></div></div></div></div>
 
 <div class="box-ml"><div class="box-mr"><div class="box-content">
 
 <div class="context-toolbar">
-<div class="block">
-<div class="left">
-<p>
+<div class="button-left">
+<p class="table-preferences">
     {switch match=$limit}
     {case match=25}
         <a href={concat( '/user/preferences/set/admin_classlists_limit/1/', $page_uri )|ezurl} title="{'Show 10 items per page.'|i18n( 'design/admin/node/view/full' )}">10</a>
@@ -83,7 +82,6 @@
 </div>
 <div class="break"></div>
 
-</div>
 </div>
 
 
