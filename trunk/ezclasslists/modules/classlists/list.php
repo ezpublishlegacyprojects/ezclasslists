@@ -87,8 +87,7 @@ if( !is_numeric( $offset ) )
     $offset = 0;
 }
 
-include_once( 'kernel/common/template.php' );
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 $tpl->setVariable( 'sort_method', $sortMethod );
 if ( $sortOrder === 'ascending' )
 {
