@@ -136,7 +136,7 @@ if ( $Module->isCurrentAction('Remove') )
 }
 
 $path = array( array( 'url' => 'classlists/list',
-                      'text' => ezi18n( 'classlists/list', 'Lists by content class' ) ) );
+                      'text' => ezpI18n::tr( 'classlists/list', 'Lists by content class' ) ) );
 
 if ( $classIdentifier != '' )
 {
@@ -147,8 +147,8 @@ if ( $classIdentifier != '' )
                                                                                 $sortMethod,
                                                                                 $sortOrder ) ), '/' );
         $path[] = array( 'url' => $page_uri,
-                         'text' => ezi18n( 'classlists/list', '%classname objects',
-                                           false, array('%classname' => $classObject->attribute( 'name' ) ) ) );
+                         'text' => ezpI18n::tr( 'classlists/list', '%classname objects',
+                                                false, array('%classname' => $classObject->attribute( 'name' ) ) ) );
         $tpl->setVariable( 'class_identifier', $classIdentifier );
         $tpl->setVariable( 'page_uri', $page_uri );
     }
@@ -158,7 +158,7 @@ if ( $classIdentifier != '' )
                                                                                 $sortOrder ) ), '/' );
         $tpl->setVariable( 'page_uri', $page_uri );
         $tpl->setVariable( 'class_identifier', false );
-        $tpl->setVariable( 'error', ezi18n( 'classlists/list',
+        $tpl->setVariable( 'error', ezpI18n::tr( 'classlists/list',
                                     '%class_identifier is not a valid content class identifier.',
                                     false, array( '%class_identifier' => $classIdentifier ) )  );
     }
