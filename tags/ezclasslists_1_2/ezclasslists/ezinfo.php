@@ -6,8 +6,8 @@
 // Created on: <30-May-2009 16:57 damien pobel>
 //
 // SOFTWARE NAME: eZ Class Lists
-// SOFTWARE RELEASE: 1.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2009 Damien POBEL
+// SOFTWARE RELEASE: 1.2
+// COPYRIGHT NOTICE: Copyright (C) 1999-2011 Damien POBEL
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -29,8 +29,8 @@ class ezclasslistsInfo
     static function info()
     {
         return array( 'Name' => "<a href=\"http://projects.ez.no/ezclasslists\">eZ Class lists</a> extension",
-                      'Version' => "1.1",
-                      'Copyright' => "Copyright (C) 1999-2009 Damien POBEL",
+                      'Version' => "1.2",
+                      'Copyright' => "Copyright (C) 1999-2011 Damien POBEL",
                       'License' => "GNU General Public License v2.0"
                       );
     }

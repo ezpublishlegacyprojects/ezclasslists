@@ -6,8 +6,8 @@
 // Created on: <14-Jui-2007 15:00 damien pobel>
 //
 // SOFTWARE NAME: eZ Class Lists
-// SOFTWARE RELEASE: 1.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2009 Damien POBEL
+// SOFTWARE RELEASE: 1.2
+// COPYRIGHT NOTICE: Copyright (C) 1999-2011 Damien POBEL
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
