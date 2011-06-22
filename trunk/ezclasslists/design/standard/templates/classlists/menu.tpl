@@ -7,7 +7,7 @@
 </div></div></div></div></div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-mr"><div class="box-bl"><div class="box-br"><div class="box-content">
-    <form action={$page_uri|ezurl()} method="post" onsubmit="return classListsFilter({'classlists/list'|ezurl( 'single' )}, {'loader.gif'|ezimage( 'single' )})">
+    <form action={$page_uri|ezurl()} method="post" id="class-list-menu-form">
     {def $classlist = fetch( 'class', 'list', hash( 'class_filter', ezini( 'ListSettings', 'IncludeClasses', 'lists.ini' ),
                                                     'sort_by', array( 'name', true() ) ) )
          $uri = ''}
@@ -48,3 +48,13 @@
     </p>
     </form>
 </div></div></div></div></div></div>
+<script type="text/javascript">
+YUILoader.require(['utilities', 'event']);
+YUILoader.onSuccess = function() {ldelim}
+
+    var o = {ldelim} baseURL: {'classlists/list'|ezurl( 'single' )}, loader: {'loader.gif'|ezimage( 'single' )} {rdelim};
+    YAHOO.util.Event.addListener("class-list-menu-form", "submit", classListsFilter, o);
+
+{rdelim};
+YUILoader.insert({ldelim}{rdelim}, 'js');
+</script>

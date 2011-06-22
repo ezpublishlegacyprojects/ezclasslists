@@ -1,9 +1,12 @@
 // $Id$
 // $HeadURL$
-var CLASSLISTS_MAIN_CONTENT_ID = 'maincontent-design';
+// TODO: rewrite this !
+var CLASSLISTS_MAIN_CONTENT_ID = 'fix';
 
-function classListsFilter( baseURL, imgLoader )
+function classListsFilter( e, options )
 {
+    var baseURL = options.baseURL;
+    var imgLoader = options.loader;
     if ( !YAHOO.util.Connect.asyncRequest )
     {
         return true;
@@ -21,7 +24,7 @@ function classListsFilter( baseURL, imgLoader )
     var classListsURL = classListsBuildURL( baseURL );
     classListsWait( imgLoader );
     var transaction = YAHOO.util.Connect.asyncRequest( 'GET', classListsURL, callback );
-    return false;
+    YAHOO.util.Event.preventDefault( e );
 }
 
 function classListsWait( imgLoader )
